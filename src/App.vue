@@ -1,25 +1,28 @@
 <template>
   <div id="app">
-    <k-head></k-head>
+    <mhyhead></mhyhead>
     <div class="main">
-      <keep-alive>
-        <router-view></router-view>
-      </keep-alive>
+      <router-view></router-view>
     </div>
-    <player></player>
-    <detail-player></detail-player>
+    <mhyplayer></mhyplayer>
+    <mhydetail_player-player></mhydetail_player-player>
   </div>
 </template>
 
 <script type="es6">
-  import kHead from './components/header/head'
-  import player from './components/player'
-  import detailPlayer from './components/detail_player'
+  import mhyhead from './components/header/mhyhead'
+  import mhyplayer from './components/mhyplayer'
+  import mhydetail_player from './components/mhydetail_player'
   export default {
     name: 'app',
     components: {
-      kHead, player, detailPlayer
+      mhyhead, mhyplayer, mhydetail_player
     }
   }
 </script>
+<style>
+  .main{
+    margin-top: 94px;
+  }
+</style>
 
