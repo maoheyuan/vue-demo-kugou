@@ -14,13 +14,13 @@
 <script type="es6">
 
   import {Navbar,TabItem} from "mint-ui"
-  import {mapSate} from "vuex"
+  import { mapState } from "vuex"
   export default{
 
       name:"mhyhead-nav",
       components:{Navbar,TabItem},
       computed:{
-        ...mapSate(["headNav"])
+        ...mapState(["headNav"])
       },
       methods:{
 

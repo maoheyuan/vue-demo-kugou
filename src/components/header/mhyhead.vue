@@ -10,7 +10,7 @@
   import mhyheadLogo from "./mhyhead_logo"
   import mhyheadNav from "./mhyhead-nav"
   import mhyrankHead from "./mhyrank-head"
-  import {mapGetter} from "vuex"
+  import {mapGetters} from "vuex"
   export default{
       computed:{
         ...mapGetters(["head"])

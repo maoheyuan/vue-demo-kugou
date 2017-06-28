@@ -9,7 +9,7 @@ const store=new Vuex.Store({
     state:{
       audio:{
         songUrl:"",
-        imgUrl:"",
+        imgUrl:"http://m.kugou.com/v3/static/images/index/logo_kugou.png",
         title:"",
         singer:"",
         currentLength:0,
@@ -23,7 +23,8 @@ const store=new Vuex.Store({
       },
       headNav:"head-nav1",
       audioLoadding:false,
-      detailPlayer:false,
+      detailPlayerFlag: false,
+         showPlayer: false,
       listenCount:0,
       isPlay:true,
       listInfo:{
@@ -36,7 +37,7 @@ const store=new Vuex.Store({
       audio:state=>state.audio,
       head:state=>state.head,
       audioLoadding:state=>state.audioLoadding,
-      detailPlayterFlag:state=>state.detailPlayFlag,
+        detailPlayerFlag: state=>state.detailPlayerFlag,
       showPlayer:state=>state.showPlayer,
       isPlay:state=>state.isPlay
     },
@@ -118,7 +119,7 @@ const store=new Vuex.Store({
           commit("setLrc",res.data);
         });
       },
-      prev({commit,state}){
+      prev({dispatch,state}){
         var list=state.listInfo.songList;
         if(state.listInfo.songIndex==0){
           state.listInfo.songIndex=list.length;
@@ -149,4 +150,4 @@ const store=new Vuex.Store({
 });
 
 
-export default store
+export default store;
