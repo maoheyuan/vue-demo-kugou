@@ -43,7 +43,7 @@ const store=new Vuex.Store({
     },
     mutations:{
       setAudio(state,audio){
-        if(!state,listenCount){
+        if(!state.listenCount){
           state.showPlayer=true;
         }
 
@@ -95,23 +95,20 @@ const store=new Vuex.Store({
     },
     actions:{
 
-      getSong({commit,state},hash){
-        commit("toggleAudioLoadding",true);
-        Vue.http.get("http://cs003.m2828.com/apis/getKugouSong.php?hash=${hash}").then(
-          res=>{
-            var json_obj=JSON.parse(res.data);
-            var songUrl=json_obj.url,
-                imgUrl=json_obj.imgUrl.split("{size}").join("100"),
-                title=json_obj.songName,
-                singer=json_obj.choricSinger,
-                songLength=json_obj.timeLength,
-                currentLength=0,
-                audio={songUrl,imgUrl,title,singer,songLength, currentLength}
-                commit("setAudio",audio);
-                commit("toggleAudioLoadding",false);
-
-          }
-        );
+  getSong({commit,state}, hash){
+        commit('toggleAudioLoadding', true);
+        Vue.http.get(`http://cs003.m2828.com/apis/getKugouSong.php?hash=${hash}`).then(res=> {
+          var json_obj = JSON.parse(res.data);
+          var songUrl = json_obj.url,
+            imgUrl = json_obj.imgUrl.split('{size}').join('100'),
+            title = json_obj.songName,
+            singer = json_obj.choricSinger,
+            songLength = json_obj.timeLength,
+            currentLength = 0,
+            audio = {songUrl, imgUrl, title, singer, songLength, currentLength};
+          commit('setAudio', audio);
+          commit('toggleAudioLoadding', false);
+        });
       },
       getLrc({commit,state},hash){
 
