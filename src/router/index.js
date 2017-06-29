@@ -17,6 +17,9 @@ const router=new VueRouter({
        {
          path:'/mhylist',component:require('../views/mhylist')
         },
+               {
+                 path:'/mhylist/info/:id',component:require('../views/mhylist_info')
+                },
   {
     path:"/mhyringt_one",component:require("../views/mhyringt_one")
   }
