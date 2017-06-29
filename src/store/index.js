@@ -17,9 +17,9 @@ const store=new Vuex.Store({
         currentFlag:false
       },
       head:{
-      toggle:false,
-      title:"",
-      style:{"background":"rgba(43,162,251,0)"}
+        toggle:false,
+        title:"",
+        style1:{"background":"rgba(43,162,251,0)"}
       },
       headNav:"head-nav1",
       audioLoadding:false,
@@ -58,15 +58,16 @@ const store=new Vuex.Store({
       },
       showHead(state,flag){
         state.head.toggle=flag;
+
       },
       setHeadTitle(state,title){
         state.head.title=title;
       },
-      setHeadStyle(state,style){
-        state.head.style=style;
+      setHeadStyle(state,style1){
+        state.head.style1=style1;
       },
       resetHeadStyle:state=>{
-      state.head.style={'background': 'rgba(43,162,251,0)'};
+      state.head.style1={'background': 'rgba(43,162,251,0)'};
       },
       toggleAudioLoadding:(state,flag)=>{
         state.audioLoadding=flag;

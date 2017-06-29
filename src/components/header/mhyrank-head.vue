@@ -1,14 +1,15 @@
 <template>
-  <div class="rank-head container" :style="style" id="transparent-header">
+  <div class="rank-head container" :style="style1" id="transparent-header">
     <a class="rank-head-back" @click="routerBack">
-      {{title}}
-    </a>
+
+    </a> {{title}}
   </div>
 
 </template>
 <script type="es6">
+
   export default{
-      props:["title","to","style"],
+      props: ['title', 'to', 'style1'],
       name:"mhyrank-head",
       methods:{
           routerBack(){
@@ -16,7 +17,6 @@
           }
       }
   }
-
 </script>
 <style>
 
