@@ -33,6 +33,9 @@ const router=new VueRouter({
   {
     path:"/mhyringt_one",component:require("../views/mhyringt_one")
   }
+  ,{
+      path:'*',redirect:'/index'
+    }
   ]
 });
 
