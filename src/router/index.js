@@ -20,6 +20,16 @@ const router=new VueRouter({
                {
                  path:'/mhylist/info/:id',component:require('../views/mhylist_info')
                 },
+                        {
+                                 path:'/mhysinger',component:require('../views/mhysinger')
+                                },
+
+    {
+       path:'/mhysinger/list/:id',component:require('../views/mhysinger_list')
+      },
+       {
+             path:'/mhysinger/info/:id',component:require('../views/mhysinger_info')
+            },
   {
     path:"/mhyringt_one",component:require("../views/mhyringt_one")
   }

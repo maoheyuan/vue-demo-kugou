@@ -75,7 +75,7 @@
 
               this.title=div.querySelector(".page-title").innerText;
               this.desp=div.querySelector("#introBox p").innerText;
-               
+
               this.$store.commit("setHeadTitle",this.title);
               var list=div.querySelectorAll(".panel-songslist-item");
               this.songList=[];
